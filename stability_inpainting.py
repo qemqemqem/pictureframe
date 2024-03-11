@@ -86,18 +86,19 @@ def inpaint_image(image: Image.Image, mask: Image.Image) -> Image.Image:
 
 if __name__ == "__main__":
     filename = "images/example_image.jpg"
-    # image = load_image(filename)
-    # mask = create_random_polygon_mask(image.width, image.height)
-    # mask_image = Image.fromarray(mask).convert("RGB")  # Convert to grayscale (L mode)
-    # # Invert the mask (optional, depends on Stability API usage)
-    # mask_image = ImageOps.invert(mask_image)  # May be needed based on API behavior
-    # # Display the mask_image
-    # mask_image.show()
+    image = load_image(filename)
+    image = image.resize((1024, 1024))
+    mask = create_random_polygon_mask(image.width, image.height)
+    mask_image = Image.fromarray(mask).convert("L")  # L is for grayscale
+    # Invert the mask (optional, depends on Stability API usage)
+    mask_image = ImageOps.invert(mask_image)  # May be needed based on API behavior
+    # Display the mask_image
+    mask_image.show()
 
-    image = Image.open('images/rocket.png')
-    mask = Image.open('images/rocket-mask.png')
+    # image = Image.open('images/rocket.png')
+    mask2 = Image.open('images/rocket-mask.png')
 
-    inpainted_image = inpaint_image(image, mask)
+    inpainted_image = inpaint_image(image, mask_image)
     # inpainted_image.show()
     display_image_with_matplotlib(inpainted_image)
     inpainted_image.save("images/inpainted_image.jpg")
