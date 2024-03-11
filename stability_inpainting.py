@@ -43,7 +43,7 @@ def inpaint_image(image: Image.Image, mask: Image.Image) -> Image.Image:
     """Inpaints the masked region of the image using the Stability API."""
 
     answers = stability_api.generate(
-        prompt="Photorealistic futuristic dragon",
+        prompt="Wizards dueling",
         init_image=image,
         mask_image=mask,
     )

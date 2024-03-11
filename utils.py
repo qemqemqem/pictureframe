@@ -46,8 +46,8 @@ def zoom_and_resize(image: Image.Image, vertices: np.ndarray, desired_size: Tupl
     cropped_image = image.crop((x_min, y_min, x_max, y_max))
     cropped_mask = mask.crop((x_min, y_min, x_max, y_max))
 
-    console.log("Cropped image:", cropped_image.size, cropped_image.mode)
-    console.log("Cropped mask:", cropped_mask.size, cropped_mask.mode)
+    # console.log("Cropped image:", cropped_image.size, cropped_image.mode)
+    # console.log("Cropped mask:", cropped_mask.size, cropped_mask.mode)
 
     # Resize both image and mask
     resized_image = cropped_image.resize(desired_size)  # , Image.ANTIALIAS)
