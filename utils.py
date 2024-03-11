@@ -60,8 +60,22 @@ def create_random_polygon_mask(image_width: int, image_height: int) -> Tuple[Ima
     """Creates a random polygon mask as a NumPy array."""
     mask = np.zeros((image_height, image_width), dtype=np.uint8)
     num_vertices = np.random.randint(8, 10)
-    # Generate random vertices within image bounds
-    vertices = np.random.randint(0, min(image_width, image_height), size=(num_vertices, 2))
+
+    vertices_x_center = np.random.randint(0, image_width)
+    vertices_y_center = np.random.randint(0, image_height)
+    vertices_radius = min(image_width, image_height) // 4
+
+    # Generate the vertices, generating the X values within vertices_radius of the vertices_x_center, and the Y values within vertices_radius of the vertices_y_center
+    vertices = np.zeros((num_vertices, 2), dtype=int)
+    for i in range(num_vertices):
+        # Generate points within a circle logic
+        angle = np.random.uniform(0, 2 * np.pi)
+        radius = vertices_radius * np.sqrt(np.random.uniform(0, 1))
+        x = int(vertices_x_center + radius * np.cos(angle))
+        y = int(vertices_y_center + radius * np.sin(angle))
+        vertices[i] = [x, y]
+
+    # vertices = np.random.randint(0, min(image_width, image_height), size=(num_vertices, 2))
     hull = cv2.convexHull(vertices)
     hull = np.squeeze(hull, axis=1)
     cv2.fillPoly(mask, [hull], (255, 255, 255))
