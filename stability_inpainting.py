@@ -12,6 +12,9 @@ import stability_sdk.interfaces.gooseai.generation.generation_pb2 as generation
 # import cv2
 import rich
 
+from rich.console import Console
+console = Console()
+
 # os.environ['STABILITY_HOST'] = 'grpc.stability.ai:443'
 
 api_host = os.getenv('API_HOST', 'https://api.stability.ai')
@@ -63,7 +66,7 @@ def inpaint_image(image: Image.Image, mask: np.ndarray) -> Image.Image:
 
     answers = stability_api.generate(
         prompt="Sweet dragon that has learned to be a hacker and who has traveled back in time from the future",
-        init_image=image,
+        # init_image=image,
         # mask_image=mask_image,
     )
     for resp in answers:
@@ -73,11 +76,9 @@ def inpaint_image(image: Image.Image, mask: np.ndarray) -> Image.Image:
                     "Please modify the prompt and try again.")
             if artifact.type == generation.ARTIFACT_IMAGE:
                 img2 = Image.open(io.BytesIO(artifact.binary))
-                img2.save(str(artifact.seed) + ".png")  # Save our completed image with its seed number as the filename.
-
-                # print the image
-                img2.show()
                 return img2
+    console.log("No image!", log_locals=True)
+
 
 if __name__ == "__main__":
     # Example usage:
@@ -85,4 +86,5 @@ if __name__ == "__main__":
     image = load_image(filename)
     # mask = create_random_polygon_mask(image.width, image.height)
     inpainted_image = inpaint_image(image, None)
-    inpainted_image.save("inpainted_image.jpg")
+    inpainted_image.show()
+    inpainted_image.save("images/inpainted_image.jpg")
