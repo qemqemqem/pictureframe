@@ -21,7 +21,15 @@ class ImageData:
 
     def create_age_array(self):
         """Initialize the age array for the image with random values."""
-        self.age_array = np.random.randint(0, 256, self.size)
+        # Random initial value chosen to have some diversity, but be sensitive to incrementing and zeroing
+        self.age_array = np.random.randint(0, 5, self.size)
+
+    def increment_age_array(self, increment_size: int = 1):
+        """Increment the age array by a given size."""
+        self.age_array += increment_size
+
+        # Cap all ages at 255
+        self.age_array[self.age_array > 255] = 255
 
     def generate_voronoi_cells(self, num_points: int):
         """Generate random points and create a Voronoi diagram based on these points, then store it in the object."""
