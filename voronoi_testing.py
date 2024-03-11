@@ -2,8 +2,10 @@ from typing import Tuple
 import numpy as np
 from PIL import Image, ImageDraw
 from scipy.spatial import Voronoi, cKDTree
-import matplotlib.pyplot as plt
 from dataclasses import dataclass
+
+from utils import display_image_with_matplotlib
+
 
 @dataclass
 class ImageData:
@@ -70,12 +72,6 @@ def display_selected_voronoi_cell(image_data: ImageData, cell_index: int) -> Ima
 
     return img
 
-def display_image_with_matplotlib(img):
-    """Display an image using matplotlib in a minimal window."""
-    plt.figure(figsize=(10, 6))
-    plt.imshow(img, cmap='gray')
-    plt.axis('off')
-    plt.show()
 
 if __name__ == "__main__":
     image_path = 'images/test_image.jpg'
