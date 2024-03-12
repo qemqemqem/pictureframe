@@ -44,7 +44,7 @@ if __name__ == "__main__":
 
         # inpainted_image = inpaint_image(image, mask)
         inpainted_image = inpaint_image(resized_image, resized_mask,
-                                        prompt="the scene contains a fantastic animal, inspired by medieval illuminations, Renaissance watercolor style")
+                                        prompt="two wizards dueling each other, in a fantastic oil painting style")
         # display_image_with_matplotlib(inpainted_image)
         # inpainted_image.save("images/inpainted_image.jpg")
 

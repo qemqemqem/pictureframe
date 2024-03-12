@@ -27,4 +27,4 @@ def create_animated_gif(directory: str, output_filename: str, duration: int = 50
 
 
 if __name__ == "__main__":
-    create_animated_gif('images', 'creatures.gif', 700)
+    create_animated_gif('images', 'wizards.gif', 700)

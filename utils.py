@@ -105,7 +105,7 @@ def create_random_polygon(image_width: int, image_height: int) -> np.ndarray:
 
     vertices_x_center = np.random.randint(0, image_width)
     vertices_y_center = np.random.randint(0, image_height)
-    vertices_radius = min(image_width, image_height) // 4  # PARAMETER
+    vertices_radius = min(image_width, image_height) // 3  # PARAMETER
 
     # Generate the vertices, generating the X values within vertices_radius of the vertices_x_center, and the Y values within vertices_radius of the vertices_y_center
     vertices = np.zeros((num_vertices, 2), dtype=int)
