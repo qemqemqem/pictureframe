@@ -17,6 +17,56 @@ def display_image_with_matplotlib(img):
     plt.show()
 
 
+def adjust_and_maintain_square_bbox(image_size: Tuple[int, int], vertices: np.ndarray, buffer: int) -> Tuple[
+    int, int, int, int]:
+    """
+    Adjusts a bounding box to make it square, adds a buffer, pushes it into the image if it exceeds bounds,
+    and ensures it remains square by reducing the buffer if necessary.
+
+    Args:
+    - image_size: A tuple containing the width and height of the image.
+    - vertices: A NumPy array of shape (N, 2) containing the vertices of the bounding box.
+    - buffer: An integer representing the buffer size to add around the bounding box.
+
+    Returns:
+    - A tuple of integers (x_min, y_min, x_max, y_max) representing the adjusted bounding box.
+    """
+    image_width, image_height = image_size
+
+    # Find the original bounding box
+    x_min, y_min = np.min(vertices, axis=0)
+    x_max, y_max = np.max(vertices, axis=0)
+
+    # Determine the size of the square bounding box, including the initial buffer
+    initial_bbox_size = max(x_max - x_min, y_max - y_min) + 2 * buffer
+
+    # If initial_bbox_size exceeds either the width or height of the image, set it to the minimum of the two
+    initial_bbox_size = min(initial_bbox_size, image_width, image_height)
+
+    # Calculate the center of the original bounding box
+    center_x = (x_min + x_max) / 2
+    center_y = (y_min + y_max) / 2
+
+    # Adjust center if the bounding box exceeds the image bounds
+    half_size = initial_bbox_size // 2
+    center_x = max(half_size, min(center_x, image_width - half_size))
+    center_y = max(half_size, min(center_y, image_height - half_size))
+
+    # Recalculate the bounding box with the adjusted center
+    x_min = int(center_x - half_size)
+    y_min = int(center_y - half_size)
+    x_max = int(center_x + half_size)
+    y_max = int(center_y + half_size)
+
+    # Ensure the bounding box does not exceed image boundaries
+    x_min = max(0, x_min)
+    y_min = max(0, y_min)
+    x_max = min(image_width, x_max)
+    y_max = min(image_height, y_max)
+
+    return x_min, y_min, x_max, y_max
+
+
 def zoom_and_resize(image: Image.Image, vertices: np.ndarray, desired_size: Tuple[int, int] = (1024, 1024)) -> Tuple[
     Image.Image, Image.Image, int, int, int, int]:
     image_width, image_height = image.size
