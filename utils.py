@@ -36,6 +36,7 @@ def adjust_and_maintain_square_bbox(image_size: Tuple[int, int], vertices: np.nd
     # Find the original bounding box
     x_min, y_min = np.min(vertices, axis=0)
     x_max, y_max = np.max(vertices, axis=0)
+    print("Original Bounding Box:", x_min, y_min, x_max, y_max)
 
     # Determine the size of the square bounding box, including the initial buffer
     initial_bbox_size = max(x_max - x_min, y_max - y_min) + 2 * buffer
@@ -80,17 +81,9 @@ def zoom_and_resize(image: Image.Image, vertices: np.ndarray, desired_size: Tupl
     mask = ImageOps.invert(mask)
 
     # Find bounding box
-    x_min, y_min = np.min(vertices, axis=0)
-    x_max, y_max = np.max(vertices, axis=0)
-
-    # # Make the bounding box a square
-    # max_width = x_max - x_min
-    # max_height = y_max - y_min
-    # max_dim = max(max_width, max_height)
-    # x_max = x_min + max_dim // 2
-    # y_max = y_min + max_dim // 2
-    # x_min = x_max - max_dim // 2
-    # y_min = y_max - max_dim // 2
+    buffer = min(image_width, image_height) // 8  # PARAMETER
+    x_min, y_min, x_max, y_max = adjust_and_maintain_square_bbox((image_width, image_height), vertices, buffer)
+    print("Bounding box:", x_min, y_min, x_max, y_max)
 
     # Crop the image and mask to the bounding box
     cropped_image = image.crop((x_min, y_min, x_max, y_max))
@@ -109,11 +102,11 @@ def zoom_and_resize(image: Image.Image, vertices: np.ndarray, desired_size: Tupl
 def create_random_polygon_mask(image_width: int, image_height: int) -> Tuple[Image.Image, np.ndarray]:
     """Creates a random polygon mask as a NumPy array."""
     mask = np.zeros((image_height, image_width), dtype=np.uint8)
-    num_vertices = np.random.randint(8, 10)
+    num_vertices = np.random.randint(8, 20)
 
     vertices_x_center = np.random.randint(0, image_width)
     vertices_y_center = np.random.randint(0, image_height)
-    vertices_radius = min(image_width, image_height) // 4
+    vertices_radius = min(image_width, image_height) // 4  # PARAMETER
 
     # Generate the vertices, generating the X values within vertices_radius of the vertices_x_center, and the Y values within vertices_radius of the vertices_y_center
     vertices = np.zeros((num_vertices, 2), dtype=int)

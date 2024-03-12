@@ -39,11 +39,11 @@ stability_api = client.StabilityInference(
 )
 
 
-def inpaint_image(image: Image.Image, mask: Image.Image) -> Image.Image:
+def inpaint_image(image: Image.Image, mask: Image.Image, prompt: str) -> Image.Image:
     """Inpaints the masked region of the image using the Stability API."""
 
     answers = stability_api.generate(
-        prompt="Wizards dueling",
+        prompt=prompt,
         init_image=image,
         mask_image=mask,
     )
