@@ -36,7 +36,7 @@ def adjust_and_maintain_square_bbox(image_size: Tuple[int, int], vertices: np.nd
     # Find the original bounding box
     x_min, y_min = np.min(vertices, axis=0)
     x_max, y_max = np.max(vertices, axis=0)
-    print("Original Bounding Box:", x_min, y_min, x_max, y_max)
+    # print("Original Bounding Box:", x_min, y_min, x_max, y_max)
 
     # Determine the size of the square bounding box, including the initial buffer
     initial_bbox_size = max(x_max - x_min, y_max - y_min) + 2 * buffer
@@ -83,7 +83,7 @@ def zoom_and_resize(image: Image.Image, vertices: np.ndarray, desired_size: Tupl
     # Find bounding box
     buffer = min(image_width, image_height) // 8  # PARAMETER
     x_min, y_min, x_max, y_max = adjust_and_maintain_square_bbox((image_width, image_height), vertices, buffer)
-    print("Bounding box:", x_min, y_min, x_max, y_max)
+    # print("Bounding box:", x_min, y_min, x_max, y_max)
 
     # Crop the image and mask to the bounding box
     cropped_image = image.crop((x_min, y_min, x_max, y_max))

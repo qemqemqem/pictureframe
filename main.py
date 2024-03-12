@@ -1,45 +1,58 @@
 # from torchvision.transforms import GaussianBlur
 
+from PIL import Image
 from rich.console import Console
 
+from old_tracker import OldnessTracker
 from stability_inpainting import inpaint_image
-from utils import zoom_and_resize, create_random_polygon_mask, load_image, display_image_with_matplotlib
+from utils import zoom_and_resize, create_random_polygon_mask, load_image
 
 console = Console(width=160)
 
 if __name__ == "__main__":
     filename = "images/example_image.jpg"
     image = load_image(filename)
-    image = image.resize((1024, 1024))
+    # image = image.resize((1024, 1024))  # Pretty sure this isn't broken
+
+    oldness = OldnessTracker(image.width, image.height)
 
     # Baseline for the gif
-    # image.save(f"images/example_0.jpg")
+    image.save(f"images/example_0.png")
 
-    for i in range(1):
+    for i in range(10):
         console.log(f"Editing Image {i + 1}")
+
+        # TODO Use these vertices to update oldness in an array
+        # TODO Generate 10 different vertices
+        # TODO Use a function to rank the vertices from oldness
+        # TODO Split up mask generation because it's slow
         mask, vertices = create_random_polygon_mask(image.width, image.height)
+
+        oldness.increment_polygon_area(vertices)
 
         resized_image, resized_mask, x_min, y_min, x_max, y_max = zoom_and_resize(image, vertices)
         # console.log("x_min, y_min, x_max, y_max:", x_min, y_min, x_max, y_max)
 
         # Show the resized image and mask
-        display_image_with_matplotlib(resized_image)
-        display_image_with_matplotlib(resized_mask)
+        # display_image_with_matplotlib(resized_image)
+        # display_image_with_matplotlib(resized_mask)
 
         # inpainted_image = inpaint_image(image, mask)
         inpainted_image = inpaint_image(resized_image, resized_mask,
-                                        prompt="A mysterious magical signal, in a watercolor style.")
-        display_image_with_matplotlib(inpainted_image)
-        inpainted_image.save("images/inpainted_image.jpg")
+                                        prompt="the scene contains a fantastic animal, inspired by medieval illuminations, Renaissance watercolor style")
+        # display_image_with_matplotlib(inpainted_image)
+        # inpainted_image.save("images/inpainted_image.jpg")
+
+        inpainted_image = Image.composite(resized_image, inpainted_image, resized_mask)
+        # display_image_with_matplotlib(inpainted_image)
 
         # Resize inpainted_image back to its original size
         # console.log("New size:", x_max - x_min, y_max - y_min)
         # inpainted_image = inpainted_image.resize(((x_max - x_min) // 2, (y_max - y_min) // 2))
         inpainted_image = inpainted_image.resize((x_max - x_min, y_max - y_min))
-        display_image_with_matplotlib(inpainted_image)
+        # display_image_with_matplotlib(inpainted_image)
 
-        display_image_with_matplotlib(image)
         image.paste(inpainted_image, (x_min, y_min))
-        display_image_with_matplotlib(image)
+        # display_image_with_matplotlib(image)
 
-        # image.save(f"images/example_{i + 1}.jpg")
+        image.save(f"images/example_{i + 1}.png")
