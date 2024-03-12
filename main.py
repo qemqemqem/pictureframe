@@ -5,7 +5,7 @@ from rich.console import Console
 
 from old_tracker import OldnessTracker
 from stability_inpainting import inpaint_image
-from utils import zoom_and_resize, create_random_polygon_mask, load_image
+from utils import zoom_and_resize, load_image, create_mask_from_vertices, create_random_polygon
 
 console = Console(width=160)
 
@@ -26,9 +26,14 @@ if __name__ == "__main__":
         # TODO Generate 10 different vertices
         # TODO Use a function to rank the vertices from oldness
         # TODO Split up mask generation because it's slow
-        mask, vertices = create_random_polygon_mask(image.width, image.height)
+        # vertices = create_random_polygon(image.width, image.height)
+        potential_vertices = [create_random_polygon(image.width, image.height) for _ in range(10)]
+        vertices = min(potential_vertices, key=lambda v: oldness.average_age_within(v))
 
-        oldness.increment_polygon_area(vertices)
+        mask = create_mask_from_vertices(image.width, image.height, vertices)
+
+        oldness.increment_all()
+        oldness.zero_polygon_area(vertices)
 
         resized_image, resized_mask, x_min, y_min, x_max, y_max = zoom_and_resize(image, vertices)
         # console.log("x_min, y_min, x_max, y_max:", x_min, y_min, x_max, y_max)

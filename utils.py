@@ -99,9 +99,8 @@ def zoom_and_resize(image: Image.Image, vertices: np.ndarray, desired_size: Tupl
     return resized_image, resized_mask, x_min, y_min, x_max, y_max
 
 
-def create_random_polygon_mask(image_width: int, image_height: int) -> Tuple[Image.Image, np.ndarray]:
+def create_random_polygon(image_width: int, image_height: int) -> np.ndarray:
     """Creates a random polygon mask as a NumPy array."""
-    mask = np.zeros((image_height, image_width), dtype=np.uint8)
     num_vertices = np.random.randint(8, 20)
 
     vertices_x_center = np.random.randint(0, image_width)
@@ -121,10 +120,16 @@ def create_random_polygon_mask(image_width: int, image_height: int) -> Tuple[Ima
     # vertices = np.random.randint(0, min(image_width, image_height), size=(num_vertices, 2))
     hull = cv2.convexHull(vertices)
     hull = np.squeeze(hull, axis=1)
-    cv2.fillPoly(mask, [hull], (255, 255, 255))
+
+    return hull
+
+
+def create_mask_from_vertices(image_width, image_height, vertices: np.ndarray) -> Image.Image:
+    mask = np.zeros((image_height, image_width), dtype=np.uint8)
+    cv2.fillPoly(mask, [vertices], (255, 255, 255))
     mask = Image.fromarray(mask).convert("L")  # L is for grayscale
     mask = ImageOps.invert(mask)
-    return mask, hull
+    return mask
 
 
 def load_image(filename: str) -> Image.Image:
