@@ -71,4 +71,4 @@ if __name__ == "__main__":
         image.save(f"images/example_{i + 1}.png")
 
     # Finished
-    create_animated_gif('images', 'story.gif', 600, num_images)
+    create_animated_gif('images', 'story.gif', 600, num_images + 1)
