@@ -11,8 +11,8 @@ from utils import zoom_and_resize, load_image, create_random_polygon
 
 console = Console(width=160)
 
-story_so_far = [("Once upon a time there was a castle by the sea",
-                 "Image of a castle in a Russian style, by a sea, very peaceful and picturesque")]
+story_so_far = [("Once upon a time there was a castle by the sea, with boats in the harbor and birds in the air",
+                 "Image of a castle in a Russian style, by a sea, very peaceful and picturesque, flock of birds in the sky")]
 
 if __name__ == "__main__":
     filename = "images/example_image.jpg"
@@ -46,7 +46,7 @@ if __name__ == "__main__":
         # display_image_with_matplotlib(resized_image)
         # display_image_with_matplotlib(resized_mask)
 
-        story_idea, art_idea = get_next_art_prompt(story_so_far)
+        story_idea, art_idea = get_next_art_prompt(story_so_far, done_amount=f"This is page {i + 1}/{num_images}.")
         story_so_far.append((story_idea, art_idea))
         console.log(f"Story idea: {story_idea}\nArt idea: {art_idea}")
 
@@ -71,4 +71,4 @@ if __name__ == "__main__":
         image.save(f"images/example_{i + 1}.png")
 
     # Finished
-    create_animated_gif('images', 'creatures2.gif', 600, num_images)
+    create_animated_gif('images', 'story.gif', 600, num_images)

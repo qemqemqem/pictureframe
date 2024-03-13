@@ -6,18 +6,20 @@ from typing import List, Tuple
 from langchain_openai import ChatOpenAI
 
 
-def get_next_art_prompt(prompts_so_far: List[Tuple[str, str]]) -> Tuple[str, str]:
+def get_next_art_prompt(prompts_so_far: List[Tuple[str, str]], done_amount: str = "") -> Tuple[str, str]:
     previous_content = "\n".join(
         [f"Story: {story_text}\nArt: {art_prompt}" for story_text, art_prompt in prompts_so_far])
 
     prompt = """
-I'm writing an illustrated picture book, and I want help with the next page. 
+I'm writing an illustrated picture book, and I want help with the next page.  {done_amount}
 
-Here's the story so far. I'll show you the story on each page, and a description of the art:
+Here's the story so far. I'll show you the story on each page, and a description of the art. 
 
 {previous_content}
 
-I want you to help me out by filling out this form:
+I want you to help me out by filling out this form. 
+
+Keep the header sections the same, but fill in the content with your own ideas.
 
 # Story Ideas
 
@@ -25,7 +27,7 @@ Brainstorm several ideas about what could happen next in the story. It's a pictu
 
 # Next Story Page
 
-Choosing one of those ideas, write a short one-paragraph story about what happens next in the story. It should be evocative of a fantastic world.
+Choosing one of those ideas, write a short one-paragraph story about what happens next in the story. It should be evocative of a fantastic world. Choose something exciting that will advance the plot!
 
 # Art Ideas
 
@@ -34,7 +36,7 @@ Brainstorm several ideas about what the art could look like.
 # Art Direction
 
 A picture of [adjective] [central element] with [mood] lighting. The art is [style] and [technique], in the style of [artist]. 
-""".format(previous_content=previous_content).strip()
+""".format(previous_content=previous_content, done_amount=done_amount).strip()
 
     openai_llm = ChatOpenAI(api_key=os.environ["OPENAI_API_KEY"], model_name="gpt-4")
     response = openai_llm.invoke(
