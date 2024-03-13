@@ -80,6 +80,9 @@ def zoom_and_resize(image: Image.Image, vertices: np.ndarray, desired_size: Tupl
     mask = Image.fromarray(mask).convert("L")
     mask = ImageOps.invert(mask)
 
+    # Blur it
+    # mask = cv2.GaussianBlur(mask, (11, 11), 20)
+
     # Find bounding box
     buffer = min(image_width, image_height) // 8  # PARAMETER
     x_min, y_min, x_max, y_max = adjust_and_maintain_square_bbox((image_width, image_height), vertices, buffer)

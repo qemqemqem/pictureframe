@@ -1,14 +1,18 @@
 # from torchvision.transforms import GaussianBlur
 
 from PIL import Image
-from cv2 import GaussianBlur
 from rich.console import Console
 
+from llm_master import get_next_art_prompt
+from movify import create_animated_gif
 from old_tracker import OldnessTracker
 from stability_inpainting import inpaint_image
-from utils import zoom_and_resize, load_image, create_mask_from_vertices, create_random_polygon
+from utils import zoom_and_resize, load_image, create_random_polygon
 
 console = Console(width=160)
+
+story_so_far = [("Once upon a time there was a castle by the sea",
+                 "Image of a castle in a Russian style, by a sea, very peaceful and picturesque")]
 
 if __name__ == "__main__":
     filename = "images/example_image.jpg"
@@ -20,7 +24,9 @@ if __name__ == "__main__":
     # Baseline for the gif
     image.save(f"images/example_0.png")
 
-    for i in range(30):
+    num_images = 20
+
+    for i in range(num_images):
         console.log(f"Editing Image {i + 1}")
 
         # vertices = create_random_polygon(image.width, image.height)
@@ -28,10 +34,7 @@ if __name__ == "__main__":
         # TODO Shouldn't this be max? It seems to work as min, though...
         vertices = min(potential_vertices, key=lambda v: oldness.average_age_within(v))
 
-        mask = create_mask_from_vertices(image.width, image.height, vertices)
-
-        blur = GaussianBlur(mask, (11, 11), 20)
-        mask = blur(mask)
+        # mask = create_mask_from_vertices(image.width, image.height, vertices)
 
         oldness.increment_all()
         oldness.zero_polygon_area(vertices)
@@ -43,9 +46,13 @@ if __name__ == "__main__":
         # display_image_with_matplotlib(resized_image)
         # display_image_with_matplotlib(resized_mask)
 
+        story_idea, art_idea = get_next_art_prompt(story_so_far)
+        story_so_far.append((story_idea, art_idea))
+        console.log(f"Story idea: {story_idea}\nArt idea: {art_idea}")
+
         # inpainted_image = inpaint_image(image, mask)
         inpainted_image = inpaint_image(resized_image, resized_mask,
-                                        prompt="a fantastic beast viewed from a distance, oil painting reminiscent of the Renaissance period, but a bit more fantastical")
+                                        prompt=art_idea)
         # display_image_with_matplotlib(inpainted_image)
         # inpainted_image.save("images/inpainted_image.jpg")
 
@@ -62,3 +69,6 @@ if __name__ == "__main__":
         # display_image_with_matplotlib(image)
 
         image.save(f"images/example_{i + 1}.png")
+
+    # Finished
+    create_animated_gif('images', 'creatures2.gif', 600, num_images)
