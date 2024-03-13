@@ -12,7 +12,7 @@ def create_animated_gif(directory: str, output_filename: str, duration: int = 50
     :param duration: The duration each frame should be displayed for, in milliseconds.
     """
     # Build the list of image file paths in the format `example_{i}.jpg` for i in range(10)
-    image_files: List[str] = [f"{directory}/example_{i}.png" for i in range(10)]
+    image_files: List[str] = [f"{directory}/example_{i}.png" for i in range(30)]
 
     # Load the images into a list
     images: List[Image.Image] = [Image.open(image_file) for image_file in image_files]
@@ -27,4 +27,4 @@ def create_animated_gif(directory: str, output_filename: str, duration: int = 50
 
 
 if __name__ == "__main__":
-    create_animated_gif('images', 'wizards.gif', 700)
+    create_animated_gif('images', 'creatures2.gif', 700)

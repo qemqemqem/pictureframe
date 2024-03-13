@@ -1,6 +1,7 @@
 # from torchvision.transforms import GaussianBlur
 
 from PIL import Image
+from cv2 import GaussianBlur
 from rich.console import Console
 
 from old_tracker import OldnessTracker
@@ -19,18 +20,18 @@ if __name__ == "__main__":
     # Baseline for the gif
     image.save(f"images/example_0.png")
 
-    for i in range(10):
+    for i in range(30):
         console.log(f"Editing Image {i + 1}")
 
-        # TODO Use these vertices to update oldness in an array
-        # TODO Generate 10 different vertices
-        # TODO Use a function to rank the vertices from oldness
-        # TODO Split up mask generation because it's slow
         # vertices = create_random_polygon(image.width, image.height)
         potential_vertices = [create_random_polygon(image.width, image.height) for _ in range(10)]
+        # TODO Shouldn't this be max? It seems to work as min, though...
         vertices = min(potential_vertices, key=lambda v: oldness.average_age_within(v))
 
         mask = create_mask_from_vertices(image.width, image.height, vertices)
+
+        blur = GaussianBlur(mask, (11, 11), 20)
+        mask = blur(mask)
 
         oldness.increment_all()
         oldness.zero_polygon_area(vertices)
@@ -44,7 +45,7 @@ if __name__ == "__main__":
 
         # inpainted_image = inpaint_image(image, mask)
         inpainted_image = inpaint_image(resized_image, resized_mask,
-                                        prompt="two wizards dueling each other, in a fantastic oil painting style")
+                                        prompt="a fantastic beast viewed from a distance, oil painting reminiscent of the Renaissance period, but a bit more fantastical")
         # display_image_with_matplotlib(inpainted_image)
         # inpainted_image.save("images/inpainted_image.jpg")
 
