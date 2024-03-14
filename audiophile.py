@@ -43,13 +43,14 @@ class Transcriber:
         with open(audio_filename, "rb") as audio_file:
             transcription = client.audio.transcriptions.create(
                 model="whisper-1",
-                file=audio_file
+                file=audio_file,
+                prompt=" ".join(self.transcription_history[-4:]),
             )
 
         # Print the transcribed text
         print("Transcribed Text:", transcription.text)
         print(transcription)
-        self.current_transcription += transcription.text
+        self.current_transcription += " " + transcription.text
 
     async def start_transcribing(self) -> None:
         self.currently_transcribing = True
