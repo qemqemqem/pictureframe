@@ -3,11 +3,17 @@ import os
 import random
 
 import openai
-import sounddevice as sd
 from openai import OpenAI
 from scipy.io.wavfile import write
+from sounddevice import rec, wait
 
+openai.api_key = os.getenv("OPENAI_API_KEY")
 client = OpenAI()
+
+
+# TODO Ways to improve this
+# - Pass in the transcription history, to help it understand the context of the conversation
+# - Concatenate 2 blocks at a time, to avoid errors that occur at the boundary of understanding
 
 
 class Transcriber:
@@ -21,15 +27,17 @@ class Transcriber:
 
     async def transcribe(self) -> None:
         print("Recording...")
-        audio = sd.rec(int(self.duration * self.sample_rate), samplerate=self.sample_rate, channels=2, dtype='int16')
-        sd.wait()
+        loop = asyncio.get_running_loop()
+        # Run the blocking audio recording in a separate thread
+        audio = await loop.run_in_executor(
+            None,  # Uses the default executor (ThreadPoolExecutor)
+            lambda: rec(int(self.duration * self.sample_rate), samplerate=self.sample_rate, channels=2, dtype='int16')
+        )
+        wait()  # This is blocking, but short-lived. Consider how critical this wait is.
         print("Recording finished.")
 
-        # Save the audio to a file
         audio_filename = 'output_audio.wav'
         write(audio_filename, self.sample_rate, audio)
-
-        openai.api_key = os.getenv("OPENAI_API_KEY")
 
         # Open the audio file in read-binary mode
         with open(audio_filename, "rb") as audio_file:
@@ -47,7 +55,7 @@ class Transcriber:
         self.currently_transcribing = True
         while self.currently_transcribing:
             await self.transcribe()
-            await asyncio.sleep(0)  # Yield control to allow other tasks to run
+            await asyncio.sleep(0)  # Yield control
 
     def stop_transcribing(self) -> None:
         self.currently_transcribing = False
