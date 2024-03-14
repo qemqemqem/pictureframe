@@ -24,7 +24,7 @@ if __name__ == "__main__":
     # Baseline for the gif
     image.save(f"images/example_0.png")
 
-    num_images = 20
+    num_images = 30
 
     for i in range(num_images):
         console.log(f"Editing Image {i + 1}")

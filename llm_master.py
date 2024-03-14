@@ -27,7 +27,7 @@ Brainstorm several ideas about what could happen next in the story. It's a pictu
 
 # Next Story Page
 
-Choosing one of those ideas, write a short one-paragraph story about what happens next in the story. It should be evocative of a fantastic world. Choose something exciting that will advance the plot!
+Choosing one of those ideas, write a short one-paragraph story about what happens next in the story. It should be evocative of a beautiful, fantastic world. Choose something exciting that will advance the plot!
 
 # Art Ideas
 
