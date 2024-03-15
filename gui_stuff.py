@@ -21,17 +21,10 @@ class GuiInfo:
     def load_image(self, path: str, size: Tuple[int, int]) -> pygame.Surface:
         return pygame.transform.scale(pygame.image.load(path), size)
 
-    # Show new image with fade effect
-    def show_new_image(self, new_image_path: str) -> None:
-        new_image = self.load_image(new_image_path, (self.infoObject.current_w, self.infoObject.current_h))
-        for alpha in range(0, 255, 2):
-            new_image.set_alpha(alpha)
-            self.screen.blit(new_image, (0, 0))
-            pygame.display.flip()
-            pygame.time.delay(10)  # Adjust delay for smoother fade effect
-
     # Function to initiate fade effect
     def initiate_fade(self, new_image_path: str) -> None:
+        if self.fading:
+            self.background_image = self.new_image  # Set the background image to the new image
         self.fade_alpha = 0  # Reset alpha to 0
         self.fading = True  # Start fading
         self.new_image = self.load_image(new_image_path, (self.infoObject.current_w, self.infoObject.current_h))

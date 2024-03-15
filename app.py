@@ -1,5 +1,8 @@
+import asyncio
+
 import pygame
 
+from audiophile import AudioTranscriber
 from gui_stuff import GuiInfo
 
 # Initialize Pygame
@@ -7,8 +10,14 @@ pygame.init()
 
 
 # Main function to run the game loop
-def main():
+async def main():
     gui_info = GuiInfo()
+
+    transcriber = AudioTranscriber()
+    current_transcription = "This is a story all about how, my world got flip turned upside down"
+
+    # Start the transcribing task in the background
+    # task = asyncio.create_task(transcriber.start_transcribing())
 
     background_image_path = 'images/example_image.jpg'
     background_image = gui_info.load_image(background_image_path,
@@ -31,14 +40,25 @@ def main():
         gui_info.fade_and_show()
 
         # Display text
-        gui_info.display_text_with_background("This is a story all about how, my world got flip turned upside down",
+        gui_info.display_text_with_background(current_transcription,
                                               (gui_info.infoObject.current_w // 2, gui_info.infoObject.current_h - 50),
                                               font_size=50)
 
         pygame.display.flip()
 
+        # Audio
+        new_transcription = transcriber.get_current_transcription_and_reset()
+        if new_transcription:
+            current_transcription = new_transcription
+
+        await asyncio.sleep(0)  # Yield control
+
     pygame.quit()
+
+    # Kill the task
+    # task.cancel()
+    # await task
 
 
 if __name__ == '__main__':
-    main()
+    asyncio.run(main())

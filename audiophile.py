@@ -1,6 +1,7 @@
 import asyncio
 import os
 import random
+from typing import Optional
 
 import openai
 from openai import OpenAI
@@ -16,9 +17,11 @@ client = OpenAI()
 # - Concatenate 2 blocks at a time, to avoid errors that occur at the boundary of understanding
 
 
-class Transcriber:
+class AudioTranscriber:
     def __init__(self):
+        # The current transcription is waiting to be processed by an external service
         self.current_transcription: str = ""
+
         self.transcription_history: list[str] = []
         self.currently_transcribing = False
 
@@ -61,7 +64,7 @@ class Transcriber:
     def stop_transcribing(self) -> None:
         self.currently_transcribing = False
 
-    def get_current_transcription_and_reset(self) -> str:
+    def get_current_transcription_and_reset(self) -> Optional[str]:
         """Saves the current transcription to history, returns it, and resets it."""
         current_transcription = self.current_transcription
         self.current_transcription = ""
@@ -70,7 +73,7 @@ class Transcriber:
 
 
 async def main():
-    transcriber = Transcriber()
+    transcriber = AudioTranscriber()
 
     # Start the transcribing task in the background
     task = asyncio.create_task(transcriber.start_transcribing())
