@@ -56,10 +56,15 @@ class AudioTranscriber:
         self.current_transcription += " " + transcription.text
 
     async def start_transcribing(self) -> None:
+        print("Starting to transcribe...")
         self.currently_transcribing = True
         while self.currently_transcribing:
             await self.transcribe()
             await asyncio.sleep(0)  # Yield control
+
+    def transcribe_blocking(self) -> None:
+        print("Recording...")
+        asyncio.run(self.start_transcribing())
 
     def stop_transcribing(self) -> None:
         self.currently_transcribing = False

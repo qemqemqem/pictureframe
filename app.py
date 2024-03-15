@@ -18,6 +18,11 @@ async def main():
 
     # Start the transcribing task in the background
     # task = asyncio.create_task(transcriber.start_transcribing())
+    # loop = asyncio.get_running_loop()
+    #
+    # recv_queue = multiprocessing.Queue()
+    # with concurrent.futures.ProcessPoolExecutor() as pool:
+    #     await loop.run_in_executor(pool, run_in_process, transcriber.start_transcribing, recv_queue)
 
     background_image_path = 'images/example_image.jpg'
     background_image = gui_info.load_image(background_image_path,
