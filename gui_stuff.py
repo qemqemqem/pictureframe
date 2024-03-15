@@ -16,6 +16,8 @@ class GuiInfo:
         self.running = True
         self.visible = True
 
+        self.background_image = None
+
     def load_image(self, path: str, size: Tuple[int, int]) -> pygame.Surface:
         return pygame.transform.scale(pygame.image.load(path), size)
 
@@ -63,3 +65,21 @@ class GuiInfo:
         font = pygame.font.Font(None, font_size)
         text_surf = font.render(text, True, (255, 255, 255))
         self.screen.blit(text_surf, position)
+
+    def fade_and_show(self):
+        # Fade effect logic
+        if self.fading:
+            if self.fade_alpha < 255:
+                self.fade_alpha += 5  # Increment alpha
+                if self.new_image is not None:
+                    self.new_image.set_alpha(self.fade_alpha)
+                    self.screen.blit(self.background_image, (0, 0))  # Draw the old image
+                    self.screen.blit(self.new_image, (0, 0))  # Draw the new image on top with increasing alpha
+                    self.display_recording_text()
+                # pygame.display.flip()
+            else:
+                self.fading = False  # Stop fading
+                self.background_image = self.new_image  # Set new image as the background
+        if not self.fading:
+            self.screen.blit(self.background_image, (0, 0))
+            self.display_recording_text()
