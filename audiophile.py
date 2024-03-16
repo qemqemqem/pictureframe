@@ -110,7 +110,7 @@ class AudioTranscriber:
 def main_with_files():
     transcriber = AudioTranscriber()
     transcriber.text_output_file = "comms_files/transcription.txt"
-    transcriber.control_file = "comms_files/audio_control.txt"
+    transcriber.control_file = "comms_files/control.txt"
 
     transcriber.transcribe_until_stopped()
 
@@ -137,6 +137,7 @@ async def main():
     await task  # Ensure the background task has completed or been cancelled properly
 
 
+# This isn't just for development, it's also important because app.py runs this file as a subprocess.
 if __name__ == "__main__":
     # asyncio.run(main())
     main_with_files()
