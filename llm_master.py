@@ -4,6 +4,9 @@ import re
 from typing import List, Tuple
 
 from langchain_openai import ChatOpenAI
+from rich.console import Console
+
+console = Console()
 
 
 def get_next_art_prompt(prompts_so_far: List[Tuple[str, str]], done_amount: str = "") -> Tuple[str, str]:
@@ -61,3 +64,60 @@ A picture of [adjective] [central element] with [mood] lighting. The art is [sty
             art_idea = sections[key]
 
     return story_idea, art_idea
+
+
+# I know this is duplicated code. Oh well!
+def get_next_art_prompt_from_audio(audio: str, previous_context: str) -> str:
+    prompt = """
+I'm making art based on a conversation that I'm having. Here's a loose transcription of the conversation so far:
+
+```
+{audio}
+```
+
+Here are descriptions of the most recent images that I've made, to give you some context.
+
+{previous_content}
+
+I want you to help me out by filling out this form. 
+
+Keep the header sections the same, but fill in the content with your own ideas.
+
+# Imagery
+
+Looking at the transcription of the conversation I showed you, brainstorm imagery that the words are evocative of. 
+* Concrete object that was mentioned
+* Descriptive adjective
+* Abstract concept that was mentioned
+* Emotion that was mentioned
+
+# Art Ideas
+
+Brainstorm a few ideas about what the art could look like. Try to stick as close as possible to the concrete imagery, but also think about mood and style that would match the conversation.
+
+# Art Direction
+
+A picture of [adjective] [central element] with [mood] lighting. The art is [style] and [technique], in the style of [artist]. 
+""".format(audio=audio, previous_content=previous_context).strip()
+
+    openai_llm = ChatOpenAI(api_key=os.environ["OPENAI_API_KEY"], model_name="gpt-4")
+    response = openai_llm.invoke(
+        prompt,
+        max_tokens=2000,
+        temperature=0.7,
+    ).content
+
+    pattern = r"#\s*(.*?)\n\n(.*?)(?=\n\n#|\Z)"
+    # Use re.DOTALL to make '.' match any character including newline
+    matches = re.findall(pattern, response, re.DOTALL)
+    sections = {header.strip(): text.strip() for header, text in matches}
+
+    art_idea = ""
+    for key in sections.keys():
+        if "art direction" in key.lower():
+            console.print(f"Art direction found: {sections[key]}")
+            return sections[key]
+
+    # Default to just returning the audio
+    console.print("No art direction found, defaulting to audio")
+    return audio

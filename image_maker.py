@@ -4,6 +4,7 @@ from typing import Optional
 from PIL import Image
 from rich.console import Console
 
+from llm_master import get_next_art_prompt_from_audio
 # from dev_make_gif import story_so_far
 from old_tracker import OldnessTracker
 from read_api_keys import read_api_keys
@@ -15,7 +16,7 @@ read_api_keys()
 console = Console()
 
 
-def update_image(i, image, oldness, art_idea: Optional[str] = None) -> str:
+def update_image(i, image, oldness, loose_art_idea: Optional[str] = None) -> str:
     console.log(f"Editing Image {i + 1}")
 
     potential_vertices = [create_random_polygon(image.width, image.height) for _ in range(10)]
@@ -26,11 +27,14 @@ def update_image(i, image, oldness, art_idea: Optional[str] = None) -> str:
     oldness.zero_polygon_area(vertices)
     resized_image, resized_mask, x_min, y_min, x_max, y_max = zoom_and_resize(image, vertices)
 
-    assert art_idea is not None, "Need to implement"
+    assert loose_art_idea is not None, "Need to implement"
     # if art_idea is None:
     #     story_idea, art_idea = get_next_art_prompt(story_so_far)
     #     story_so_far.append((story_idea, art_idea))
     #     console.log(f"Story idea: {story_idea}\nArt idea: {art_idea}")
+
+    # TODO Track previous art
+    art_idea = get_next_art_prompt_from_audio(loose_art_idea, "A wizard playing poker in the style of Picasso")
 
     inpainted_image = inpaint_image(resized_image, resized_mask, prompt=art_idea)
     inpainted_image = Image.composite(resized_image, inpainted_image, resized_mask)
