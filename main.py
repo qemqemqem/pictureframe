@@ -24,7 +24,7 @@ def main():
     # Baseline for the gif
     image.save(f"images/example_0.png")
 
-    num_images = 30
+    num_images = 4
 
     for i in range(num_images):
         update_image(i, image, oldness)
@@ -58,3 +58,12 @@ def update_image(i, image, oldness):
 
 if __name__ == "__main__":
     main()
+
+    #call tool to do image segmentation
+    #or at least do segmentation on objects, and colors 
+
+    '''
+    1. get segmented image
+    2. only replace areas of segmentation that haven't been replaced
+    3. Try to make segmentation
+    '''

@@ -84,7 +84,7 @@ def zoom_and_resize(image: Image.Image, vertices: np.ndarray, desired_size: Tupl
     mask = ImageOps.invert(mask)
 
     # Find bounding box
-    buffer = min(image_width, image_height) // 8  # PARAMETER
+    buffer = min(image_width, image_height) // 4  # PARAMETER
     x_min, y_min, x_max, y_max = adjust_and_maintain_square_bbox((image_width, image_height), vertices, buffer)
     # print("Bounding box:", x_min, y_min, x_max, y_max)
 
