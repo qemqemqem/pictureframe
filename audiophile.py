@@ -9,6 +9,10 @@ from rich.console import Console
 from scipy.io.wavfile import write
 from sounddevice import rec, wait
 
+from read_api_keys import read_api_keys
+
+read_api_keys()
+
 console = Console()
 
 openai.api_key = os.getenv("OPENAI_API_KEY")

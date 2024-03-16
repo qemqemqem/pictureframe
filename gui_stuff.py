@@ -44,7 +44,7 @@ class GuiInfo:
     def display_text_with_background(self, text: str, position: Tuple[int, int], font_size: int = 30,
                                      bg_color: Tuple[int, int, int] = (192, 192, 192), bg_alpha: int = 128) -> None:
         font = pygame.font.Font(None, font_size)
-        text_surf = font.render(text, True, (0, 0, 0))  # Black text
+        text_surf = font.render(text.strip(), True, (0, 0, 0))  # Black text
         text_rect = text_surf.get_rect(center=(position[0], position[1]))
 
         # Create a translucent background surface

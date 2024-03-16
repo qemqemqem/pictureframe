@@ -6,8 +6,11 @@ from rich.console import Console
 from llm_master import get_next_art_prompt
 from movify import create_animated_gif
 from old_tracker import OldnessTracker
+from read_api_keys import read_api_keys
 from stability_inpainting import inpaint_image
 from utils import zoom_and_resize, load_image, create_random_polygon
+
+read_api_keys()
 
 console = Console(width=160)
 

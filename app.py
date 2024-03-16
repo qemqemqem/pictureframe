@@ -1,9 +1,12 @@
 import asyncio
+import subprocess
 
 import pygame
 
-from audiophile import AudioTranscriber
 from gui_stuff import GuiInfo
+from read_api_keys import read_api_keys
+
+read_api_keys()
 
 # Initialize Pygame
 pygame.init()
@@ -13,8 +16,15 @@ pygame.init()
 async def main():
     gui_info = GuiInfo()
 
-    transcriber = AudioTranscriber()
-    current_transcription = "This is a story all about how, my world got flip turned upside down"
+    # transcriber = AudioTranscriber()
+    # current_transcription = "This is a story all about how, my world got flip turned upside down"
+
+    # You might want to use a different python here idk
+    with open('comms_files/audio_control.txt', 'w') as file:
+        file.write('record')
+    subprocess.Popen(["venv/bin/python", "audiophile.py"])
+    most_recent_transcription = ""
+    transcription_history = []
 
     # Start the transcribing task in the background
     # task = asyncio.create_task(transcriber.start_transcribing())
@@ -45,20 +55,31 @@ async def main():
         gui_info.fade_and_show()
 
         # Display text
-        gui_info.display_text_with_background(current_transcription,
+        with open('comms_files/transcription.txt', 'r') as file:
+            recent_transcriptions = [l.strip() for l in file.readlines()]
+        current_transcription = "\n".join(recent_transcriptions)
+        if current_transcription != most_recent_transcription and current_transcription.strip() != "":
+            most_recent_transcription = current_transcription
+            transcription_history.append(current_transcription)
+        gui_info.display_text_with_background(most_recent_transcription,
                                               (gui_info.infoObject.current_w // 2, gui_info.infoObject.current_h - 50),
                                               font_size=50)
+        with open('comms_files/transcription.txt', 'w') as file:
+            file.write('')  # Clear the file
 
         pygame.display.flip()
 
-        # Audio
-        new_transcription = transcriber.get_current_transcription_and_reset()
-        if new_transcription:
-            current_transcription = new_transcription
+        # # Audio
+        # new_transcription = transcriber.get_current_transcription_and_reset()
+        # if new_transcription:
+        #     current_transcription = new_transcription
 
         await asyncio.sleep(0)  # Yield control
 
     pygame.quit()
+
+    with open('comms_files/audio_control.txt', 'w') as file:
+        file.write('stop')
 
     # Kill the task
     # task.cancel()
