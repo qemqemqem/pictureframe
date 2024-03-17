@@ -75,10 +75,6 @@ I'm making art based on a conversation that I'm having. Here's a loose transcrip
 {audio}
 ```
 
-Here are descriptions of the most recent images that I've made, to give you some context.
-
-{previous_content}
-
 I want you to help me out by filling out this form. 
 
 Keep the header sections the same, but fill in the content with your own ideas.
@@ -90,14 +86,16 @@ Looking at the transcription of the conversation I showed you, brainstorm imager
 * Descriptive adjective
 * Abstract concept that was mentioned
 * Emotion that was mentioned
+* Concrete noun that this reminds you of
+* A portrait or landscape scene description
 
 # Art Ideas
 
-Brainstorm a few ideas about what the art could look like. Try to stick as close as possible to the concrete imagery, but also think about mood and style that would match the conversation.
+Brainstorm a few ideas about what the art could look like. If the conversation references concrete images, stick closely to that. But if it's more abstract, think about how to represent the mood and style of the conversation.
 
 # Art Direction
 
-A picture of [adjective] [central element] with [mood] lighting. The art is [style] and [technique], in the style of [artist]. 
+A picture of [concrete adjective] [concrete noun] with [lighting]. The art is [concrete or realistic style] and [creative technique], in the style of [artist]. 
 """.format(audio=audio, previous_content=previous_context).strip()
 
     openai_llm = ChatOpenAI(api_key=os.environ["OPENAI_API_KEY"], model_name="gpt-4")

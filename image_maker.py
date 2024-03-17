@@ -16,7 +16,7 @@ read_api_keys()
 console = Console()
 
 
-def update_image(i, image, oldness, loose_art_idea: Optional[str] = None) -> str:
+def update_image(i, image, oldness, audio: Optional[str] = None) -> str:
     console.log(f"Editing Image {i + 1}")
 
     potential_vertices = [create_random_polygon(image.width, image.height) for _ in range(10)]
@@ -27,14 +27,19 @@ def update_image(i, image, oldness, loose_art_idea: Optional[str] = None) -> str
     oldness.zero_polygon_area(vertices)
     resized_image, resized_mask, x_min, y_min, x_max, y_max = zoom_and_resize(image, vertices)
 
-    assert loose_art_idea is not None, "Need to implement"
+    assert audio is not None, "Need to implement"
     # if art_idea is None:
     #     story_idea, art_idea = get_next_art_prompt(story_so_far)
     #     story_so_far.append((story_idea, art_idea))
     #     console.log(f"Story idea: {story_idea}\nArt idea: {art_idea}")
 
     # TODO Track previous art
-    art_idea = get_next_art_prompt_from_audio(loose_art_idea, "A wizard playing poker in the style of Picasso")
+    art_idea = get_next_art_prompt_from_audio(audio, "A wizard playing poker in a realistic style")
+
+    with open("art_log.txt", 'a') as f:
+        f.write(f"Art {i}: {time.time()}\n")
+        f.write(f"Audio: {audio}\n")
+        f.write(f"Art Idea: {art_idea}\n\n")
 
     inpainted_image = inpaint_image(resized_image, resized_mask, prompt=art_idea)
     inpainted_image = Image.composite(resized_image, inpainted_image, resized_mask)
@@ -60,10 +65,10 @@ def update_image_in_background(starting_image_file: str) -> None:
                 time.sleep(1)
                 continue
             else:
-                art_idea = instructions
+                audio = instructions
 
-        console.log(f"Generating with art idea: {art_idea}")
-        saved_file_loc = update_image(image_num, image, oldness, art_idea)
+        console.log(f"Generating with art idea: {audio}")
+        saved_file_loc = update_image(image_num, image, oldness, audio)
 
         # TODO Record that the image has been updated
 
@@ -82,4 +87,4 @@ def update_image_in_background(starting_image_file: str) -> None:
 # This isn't just for development, it's also important because app.py runs this file as a subprocess.
 if __name__ == "__main__":
     # asyncio.run(main())
-    update_image_in_background("images/example_0.png")
+    update_image_in_background("images/start_image.png")
