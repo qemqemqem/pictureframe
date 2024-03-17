@@ -31,7 +31,7 @@ async def main():
     # Draw images in the background
     subprocess.Popen(["venv/bin/python", "image_maker.py"])
 
-    background_image_path = 'images/example_image.jpg'
+    background_image_path = 'images/start_image.png'
     background_image = gui_info.load_image(background_image_path,
                                            (gui_info.infoObject.current_w, gui_info.infoObject.current_h))
     gui_info.background_image = background_image
@@ -87,6 +87,10 @@ async def main():
     with open('comms_files/control.txt', 'w') as file:
         # This stops the background audio and image processes
         file.write('stop')
+    with open('comms_files/transcription.txt', 'w') as file:
+        file.write('')
+    with open('comms_files/image_progress.txt', 'w') as file:
+        file.write('ready')
 
     pygame.quit()
 
