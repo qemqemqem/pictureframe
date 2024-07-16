@@ -20,8 +20,12 @@ story_so_far = [
 
 
 def main():
-    filename = "images/alien_world.png"
-    image = load_image(filename)
+    filename = "images/example.png"
+    try:
+        image = load_image(filename)
+    except FileNotFoundError:
+        print(f"File not found: {filename}. Put an image there and try again.")
+        return
 
     oldness = OldnessTracker(image.width, image.height)
 
