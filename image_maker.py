@@ -16,7 +16,8 @@ read_api_keys()
 console = Console()
 
 
-def update_image(i, image, oldness, audio: Optional[str] = None) -> str:
+def update_image(i, image, oldness, audio: Optional[str] = None,
+                 previous_context: str = "A wizard playing poker in a realistic style") -> str:
     console.log(f"Editing Image {i + 1}")
 
     potential_vertices = [create_random_polygon(image.width, image.height) for _ in range(10)]
@@ -34,17 +35,23 @@ def update_image(i, image, oldness, audio: Optional[str] = None) -> str:
     #     console.log(f"Story idea: {story_idea}\nArt idea: {art_idea}")
 
     # TODO Track previous art
-    art_idea = get_next_art_prompt_from_audio(audio, "A wizard playing poker in a realistic style")
+    art_idea = get_next_art_prompt_from_audio(audio, previous_context)
 
     with open("art_log.txt", 'a') as f:
         f.write(f"Art {i}: {time.time()}\n")
         f.write(f"Audio: {audio}\n")
         f.write(f"Art Idea: {art_idea}\n\n")
 
+    # TODO For post
+    # [] Save resized_image to file
+    # [] Save resized_mask to file
+
     inpainted_image = inpaint_image(resized_image, resized_mask, prompt=art_idea)
+    # [] Save inpainted_image to file
     inpainted_image = Image.composite(resized_image, inpainted_image, resized_mask)
     inpainted_image = inpainted_image.resize((x_max - x_min, y_max - y_min))
     image.paste(inpainted_image, (x_min, y_min))
+    # [] Save inpainted_image to file again
 
     save_loc = f"images/example_{i + 1}.png"
     image.save(save_loc)

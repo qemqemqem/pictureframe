@@ -14,8 +14,8 @@ read_api_keys()
 console = Console(width=160)
 
 story_so_far = [
-    ("Once upon a time there was a castle by the sea, with boats in the harbor and birds in the air",
-     "Image of a castle in a Russian style, by a sea, very peaceful and picturesque, flock of birds in the sky"),
+    ("Once upon a time there was the void, filled only with chaos and potential.",
+     "Image of outer space, full of stars and galaxies"),
 ]
 
 
@@ -29,21 +29,28 @@ def main():
     image.save(f"images/neutral_0.png")
 
     num_images = 20
+    num_generated = 0
 
-    for i in range(num_images):
-        # Get next art prompt
-        next_prompt = get_next_art_prompt(story_so_far)
-        story_so_far.append(next_prompt)
-        art_description = next_prompt[1]
+    try:
+        for i in range(num_images):
+            # Get next art prompt
+            next_prompt = get_next_art_prompt(story_so_far)
+            story_so_far.append(next_prompt)
+            art_description = next_prompt[1]
 
-        save_loc = update_image(i, image, oldness, art_description)
+            previous_context = "\n".join([story[0] for story in story_so_far])
 
-        print(f"Saved image {i + 1} to {save_loc}")
+            save_loc = update_image(i, image, oldness, art_description, previous_context)
+
+            print(f"Saved image {i + 1} to {save_loc}")
+            num_generated = i + 1
+    except KeyboardInterrupt:
+        print("Interrupted, creating gif anyway...")
 
     # Finished
-    save_name = "gifs/neutral.gif"
+    save_name = "gifs/space.gif"
     print(f"Creating gif... at {save_name}")
-    create_animated_gif('images', save_name, 600, num_images + 1)
+    create_animated_gif('images', save_name, 600, num_generated + 1)
 
 
 if __name__ == "__main__":
