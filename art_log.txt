@@ -1,0 +1,20 @@
+Art 0: 1710722813.080735
+Audio: 
+Art Idea: A picture of a gleaming sand bucket with soft, natural morning light. The art is hyperrealistic and uses a technique of detailed brushwork, in the style of Ester Roi.
+
+Art 1: 1710722851.4916198
+Audio: the LLM hotkey. It starts inserting a response. It starts inserting a response below it. You have your own editor that you're being recorded in. You wrote your own editor that has features. So what this is doing is...
+Art Idea: A picture of a glowing keyboard under dim lighting. The art is realistic and uses chiaroscuro, in the style of Caravaggio. The key with the LLM hotkey should be highlighted, signifying its importance, while the rest of the keyboard fades into shadow. The light from the screen might illuminate the face of the person using the computer, showing concentration and creativity.
+
+Art 2: 1710722886.486794
+Audio: It's transcripts are not very accurate. If they are not, I think... I messed up the way that I'm recording audio. It basically sends it to an artwork prompt that will infill the image. So it paints random things into the image based on what's being described. That's not very good so far. Semi-colon, drop table, images, semi-colon, dash, dash.
+Art Idea: A picture of a chaotic art studio with dim lighting. The art is surrealistic and uses mixed media, in the style of Salvador Dalí. The paint strokes should be dynamic and energetic, representing the transformation of sound into visuals. The main focus should be the microphone, representing the source of the conversation, and the random pieces of art, symbolizing the result of the transcription.
+
+Art 3: 1710722920.938691
+Audio: It's not going to work with this quality of transcription also. Also, it is sending the transcript to an LLM. Golly! Oh, sorry! No, it's fine DPI. Yeah, and I think I am not using.
+Art Idea: A picture of a chaotic artist's studio with soft lighting. The art is semi-abstract and uses a mix of painting and collage, in the style of Robert Rauschenberg.
+
+Art 4: 1710722960.0324929
+Audio: Voice API correctly so that it's like broken up into small chunks that it has trouble interpreting. Thank you. This is correct, but then there's a lot of just completely wrong junk. I think I need to just stop using the Whisper API, but I thought would be good. Other service in the background to do real time transcription. Anyway, the project idea is for a digital picture frame that listens to what's being said.
+Art Idea: A picture of a broken digital picture frame with soft, diffused lighting. The art is realistic and uses a chiaroscuro technique, in the style of Caravaggio. The frame is filled with harsh, jagged shapes and lines, symbolizing the frustration felt due to the Whisper API. In the background, there's a faint, ghostly image of a microphone, symbolizing the real-time transcription service.
+

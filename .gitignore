@@ -166,3 +166,7 @@ gifs/*
 
 # Private API keys
 api_keys.txt
+
+# These files contain transcripts of conversations and are thus private
+art_log.txt
+comms_files/*
