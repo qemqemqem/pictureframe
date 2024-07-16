@@ -91,7 +91,7 @@ Looking at the transcription of the conversation I showed you, brainstorm imager
 
 # Art Ideas
 
-Brainstorm a few ideas about what the art could look like. If the conversation references concrete images, stick closely to that. But if it's more abstract, think about how to represent the mood and style of the conversation.
+Brainstorm a few ideas about what the art could look like. If the conversation references concrete images, stick closely to that. But if it's more abstract, think about how to represent the mood and style of the conversation. Not everything needs to be used in the prompt, but it's good to have a few ideas to choose from.
 
 # Art Direction
 
