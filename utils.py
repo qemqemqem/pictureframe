@@ -102,13 +102,13 @@ def zoom_and_resize(image: Image.Image, vertices: np.ndarray, desired_size: Tupl
     return resized_image, resized_mask, x_min, y_min, x_max, y_max
 
 
-def create_random_polygon(image_width: int, image_height: int) -> np.ndarray:
+def create_random_polygon(image_width: int, image_height: int, size: float = 0.3) -> np.ndarray:
     """Creates a random polygon mask as a NumPy array."""
     num_vertices = np.random.randint(8, 20)
 
     vertices_x_center = np.random.randint(0, image_width)
     vertices_y_center = np.random.randint(0, image_height)
-    vertices_radius = min(image_width, image_height) // 3  # PARAMETER
+    vertices_radius = int(min(image_width, image_height) * size)
 
     # Generate the vertices, generating the X values within vertices_radius of the vertices_x_center, and the Y values within vertices_radius of the vertices_y_center
     vertices = np.zeros((num_vertices, 2), dtype=int)

@@ -17,10 +17,11 @@ console = Console()
 
 
 def update_image(i, image, oldness, audio: Optional[str] = None,
-                 previous_context: str = "A wizard playing poker in a realistic style") -> str:
+                 previous_context: str = "A wizard playing poker in a realistic style",
+                 polygon_size: float = 0.3) -> str:
     console.log(f"Editing Image {i + 1}")
 
-    potential_vertices = [create_random_polygon(image.width, image.height) for _ in range(10)]
+    potential_vertices = [create_random_polygon(image.width, image.height, size=polygon_size) for _ in range(10)]
     # TODO Shouldn't this be max? It seems to work as min, though...
     vertices = min(potential_vertices, key=lambda v: oldness.average_age_within(v))
 
