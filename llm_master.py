@@ -9,7 +9,8 @@ from rich.console import Console
 console = Console()
 
 
-def get_next_art_prompt(prompts_so_far: List[Tuple[str, str]], done_amount: str = "") -> Tuple[str, str]:
+def get_next_art_prompt(prompts_so_far: List[Tuple[str, str]], done_amount: str = "", artist: str = "[artist]") -> \
+Tuple[str, str]:
     previous_content = "\n".join(
         [f"Story: {story_text}\nArt: {art_prompt}" for story_text, art_prompt in prompts_so_far])
 
@@ -38,8 +39,8 @@ Brainstorm several ideas about what the art could look like.
 
 # Art Direction
 
-A picture of [adjective] [central element] with [mood] lighting. The art is [style] and [technique], in the style of [artist]. 
-""".format(previous_content=previous_content, done_amount=done_amount).strip()
+A picture of [adjective] [central element] with [mood] lighting. The art is [style] and [technique], in the style of {artist}. 
+""".format(previous_content=previous_content, done_amount=done_amount, artist=artist).strip()
 
     openai_llm = ChatOpenAI(api_key=os.environ["OPENAI_API_KEY"], model_name="gpt-4")
     response = openai_llm.invoke(

@@ -46,6 +46,7 @@ def inpaint_image(image: Image.Image, mask: Image.Image, prompt: str) -> Image.I
         prompt=prompt,
         init_image=image,
         mask_image=mask,
+        cfg_scale=3.0,
     )
     for resp in answers:
         for artifact in resp.artifacts:

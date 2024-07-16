@@ -20,13 +20,13 @@ story_so_far = [
 
 
 def main():
-    filename = "images/example_image.jpg"
+    filename = "images/alien_world.png"
     image = load_image(filename)
 
     oldness = OldnessTracker(image.width, image.height)
 
     # Baseline for the gif
-    image.save(f"images/neutral_0.png")
+    image.save(f"images/example_0.png")
 
     num_images = 20
     num_generated = 0
@@ -34,11 +34,12 @@ def main():
     try:
         for i in range(num_images):
             # Get next art prompt
-            next_prompt = get_next_art_prompt(story_so_far)
+            next_prompt = get_next_art_prompt(story_so_far, done_amount=f"Part {i + 1}/{num_images}")
             story_so_far.append(next_prompt)
             art_description = next_prompt[1]
 
-            previous_context = "\n".join([story[0] for story in story_so_far])
+            previous_context = "This is a creation myth about the origin story of fantastic alien robots, starting with the birth of the universe.\n\n" + "\n".join(
+                [story[0] for story in story_so_far])
 
             save_loc = update_image(i, image, oldness, art_description, previous_context)
 

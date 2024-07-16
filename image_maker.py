@@ -43,15 +43,24 @@ def update_image(i, image, oldness, audio: Optional[str] = None,
         f.write(f"Art Idea: {art_idea}\n\n")
 
     # TODO For post
+    save_intermediate = True
     # [] Save resized_image to file
+    if save_intermediate:
+        resized_image.save(f"images/intermediate_{i + 1}.png")
     # [] Save resized_mask to file
+    if save_intermediate:
+        resized_mask.save(f"images/mask_{i + 1}.png")
 
     inpainted_image = inpaint_image(resized_image, resized_mask, prompt=art_idea)
     # [] Save inpainted_image to file
+    if save_intermediate:
+        inpainted_image.save(f"images/inpainted_{i + 1}.png")
     inpainted_image = Image.composite(resized_image, inpainted_image, resized_mask)
     inpainted_image = inpainted_image.resize((x_max - x_min, y_max - y_min))
     image.paste(inpainted_image, (x_min, y_min))
     # [] Save inpainted_image to file again
+    if save_intermediate:
+        image.save(f"images/inpainted_final_{i + 1}.png")
 
     save_loc = f"images/example_{i + 1}.png"
     image.save(save_loc)
