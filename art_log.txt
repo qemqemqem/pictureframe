@@ -334,3 +334,187 @@ Art 4: 1721167637.8605785
 Audio: A picture of curious sentient beings exploring their vibrant world with awe-struck lighting. The art is dynamic and expressive, capturing the intelligence and curiosity of the beings, in the style of Rebecca Guay.
 Art Idea: A picture of awe-struck sentient beings with vibrant lighting. The art is dynamic and expressive, capturing the curiosity and intelligence of the beings, in the style of Rebecca Guay. The beings are depicted in a realistic style, using creative techniques like exaggerated proportions and dramatic color contrasts to emphasize their curiosity and sense of wonder.
 
+Art 5: 1721167692.390676
+Audio: A picture of inventive sentient beings crafting tools and building shelters with warm, inviting lighting. The art is detailed and immersive, capturing the resourcefulness and ingenuity of the beings, in the style of Rebecca Guay.
+Art Idea: A picture of warm, bustling village with inviting lighting. The art is detailed and immersive, showcasing the beings' resourcefulness and creativity in the style of Rebecca Guay.
+
+Art 6: 1721167744.939752
+Audio: A picture of inventive sentient beings launching their first spaceship with awe-inspiring lighting. The art is detailed and dynamic, capturing the wonder and anticipation of the beings as they embark on their first cosmic journey, in the style of Rebecca Guay.
+Art Idea: A picture of an awe-inspiring spaceship with celestial lighting. The art is detailed and dynamic, demonstrating the inventive nature and anticipation of the sentient beings, in the style of Rebecca Guay.
+
+Art 7: 1721167803.3764453
+Audio: A picture of a lush, thriving planet with vibrant lighting. The art is detailed and evocative, capturing the excitement and wonder of a world coming to life, in the style of Rebecca Guay.
+Art Idea: A picture of a lush, thriving planet with vibrant, radiant lighting. The art is detailed, evocative, and realistic, capturing the excitement and wonder of a world coming to life, using a creative technique of layered colors and textures, in the style of Rebecca Guay.
+
+Art 8: 1721167870.4476187
+Audio: A picture of determined sentient beings observing a barren planet from their spaceship with contemplative lighting. The art is detailed and thought-provoking, capturing the reflection of the barren planet in their eyes, in the style of Rebecca Guay.
+Art Idea: A picture of determined sentient beings with a barren planet. The art is detailed and emotive, capturing the reflection of the desolate landscape in their eyes, in the style of Rebecca Guay. The lighting is contemplative, highlighting the contrast between the cold outside and the warm, focused determination of the observers. The creative technique involves intricate detailing of the spaceship's interior and the observers' faces, with a focus on their eyes.
+
+Art 9: 1721167930.2702837
+Audio: A picture of hardworking sentient beings amidst the budding landscape with hopeful lighting. The art is detailed and transformative, capturing the determination and resilience of the beings, in the style of Rebecca Guay.
+Art Idea: A picture of a bustling, vibrant meadow with golden, hopeful lighting. The art is detailed and whimsical, capturing the perseverance and unity of the beings, in the style of Rebecca Guay.
+
+Art 10: 1721167995.799696
+Audio: A picture of awe-struck sentient beings amidst the vast, intricate ruins with mysterious lighting. The art is detailed and evocative, capturing the contrast between the new life on the planet and the remnants of the ancient civilization, in the style of Rebecca Guay.
+Art Idea: A picture of intricate ruins with mysterious lighting. The art is detailed and evocative, capturing the contrast between the new life on the planet and the remnants of the ancient civilization, in the style of Rebecca Guay. Use of fine lines and subtle color gradients to create a sense of depth and realism, and a creative technique of layering to depict the different eras of the civilization.
+
+Art 11: 1721168060.3084323
+Audio: A picture of curious sentient beings holding up the intricate, pulsating artifact with awe-inspiring lighting. The art is detailed and enigmatic, capturing the mystery and anticipation surrounding the artifact, in the style of Rebecca Guay.
+Art Idea: A picture of a pulsating artifact with awe-inspiring lighting. The art is detailed and intricate, using a combination of realistic rendering and symbolic representation, in the style of Rebecca Guay.
+
+Art 12: 1721168114.8463957
+Audio: A picture of glowing energy lines crisscrossing the landscape with awe-inspiring lighting. The art is detailed and illuminating, capturing the sense of awe and wonder as the ruins come alive, in the style of Rebecca Guay.
+Art Idea: A picture of radiant energy lines with dramatic lighting. The art is intricate and enchanting, capturing the awe of the ruins coming alive with the use of contrast and color, in the style of Rebecca Guay.
+
+Art 13: 1721168168.7801833
+Audio: A picture of glowing energy grid extending into the cosmos with awe-inspiring lighting. The art is detailed and captivating, capturing the sense of wonder and realization in the sentient beings, in the style of Rebecca Guay.
+Art Idea: A picture of an intricate, glowing energy grid with cosmic lighting. The art is detailed and impactful, employing a mix of realism and surrealism to capture the sense of wonder and realization in the sentient beings, in the style of Rebecca Guay.
+
+Art 14: 1721168227.390653
+Audio: A picture of a mesmerizing, active portal within the energy grid with dramatic lighting. The art is detailed and enchanting, capturing the anticipation and wonder of the sentient beings, in the style of Rebecca Guay.
+Art Idea: A picture of mesmerizing portal within the energy grid with dramatic lighting. The art is detailed and enchanting, using a combination of realistic style and creative technique, in the style of Rebecca Guay. The sentient beings display a wide range of emotions, all tied to anticipation and wonder. The entire scene is captivating, pulling the viewer into the surreal landscape.
+
+Art 15: 1721168282.4928212
+Audio: A picture of awestruck sentient beings in an advanced civilization with ethereal lighting. The art is intricate and futuristic, capturing the grandeur and advanced technology of the civilization, in the style of Rebecca Guay.
+Art Idea: A picture of awestruck sentient beings in a glow-lit advanced civilization. The art is intricate and vibrant, using elements of light and shadow to enhance the sense of grandeur, in the style of Rebecca Guay.
+
+Art 16: 1721168344.0902748
+Audio: A picture of radiant beings of light revealing their true nature to the awestruck sentient beings with ethereal lighting. The art is detailed and evocative, capturing the revelation and the sense of awe in the sentient beings, in the style of Rebecca Guay.
+Art Idea: A picture of awe-struck sentient beings with ethereal lighting. The art is detailed and evocative, using creative techniques such as light and shadow to create depth and convey the sense of awe, in the style of Rebecca Guay.
+
+Art 17: 1721168404.8595705
+Audio: A picture of radiant beings of light and awestruck sentient beings in a grand hall with ethereal lighting. The art is intricate and enlightening, depicting the grandeur of the moment and the deep connection between the two civilizations, in the style of Rebecca Guay.
+Art Idea: A picture of intricate grand hall with ethereal lighting. The art is detailed and symbolic, using color and light to bring out the deep connection between the two civilizations, in the style of Rebecca Guay.
+
+Art 18: 1721168467.193688
+Audio: A picture of sentient beings in a grand cosmic library with ethereal lighting. The art is intricate and enlightening, showcasing the grandeur of the place and the awe-inspiring moment, in the style of Rebecca Guay.
+Art Idea: A picture of an awe-inspiring grand cosmic library with ethereal lighting. The art is intricate and enlightening, showcasing the grandeur of the space and the sentient beings' moments of discovery in the style of Rebecca Guay.
+
+Art 19: 1721168537.606216
+Audio: A picture of determined sentient beings in front of a galaxy map with inspired lighting. The art is detailed and evocative, capturing the determination and anticipation of the sentient beings as they prepare for their grand cosmic journey, in the style of Rebecca Guay.
+Art Idea: A picture of a glowing galaxy map with ethereal lighting. The art is detailed and intricate, employing the use of vibrant colors and expressive facial details, in the style of Rebecca Guay. The emotion of anticipation and determination is strongly conveyed through the posture and expressions of the sentient beings, their gaze focused on their cosmic journey ahead.
+
+Art 0: 1721184728.104594
+Audio: A picture of a radiant cosmic entity with ethereal lighting. The art is detailed and surreal, in the style of Terese Nielsen. The entity is shaping the universe, its hands touching a galaxy as if it were clay. The entity is a nebula-like figure, made of stars and galaxies, with a humanoid shape. The scene is set against the void, highlighting the contrast between the chaos and the order the entity is creating.
+Art Idea: A picture of a radiant cosmic entity with ethereal lighting. The art is detailed and surreal, using pointillism and gradient techniques, in the style of Terese Nielsen.
+
+Art 1: 1721184797.7306988
+Audio: A picture of a radiant cosmic entity with ethereal lighting. The art is detailed and surreal, in the style of Terese Nielsen. The entity is shaping the universe, its hands touching a galaxy as if it were clay. The entity is a nebula-like figure, made of stars and galaxies, with a humanoid shape. The scene is set against the void, highlighting the contrast between the chaos and the order the entity is creating.
+Art Idea: A picture of a luminous cosmic entity with ethereal lighting. The art is intricate and surreal, using color contrasts and layered textures, in the style of Terese Nielsen.
+
+Art 2: 1721184853.6729634
+Audio: A picture of a radiant cosmic entity with majestic lighting. The art is highly detailed and filled with contrast, in the style of Terese Nielsen. The entity is shown creating the new entity, their hands touching, with a burst of cosmic energy flowing between them. The scene is set against the backdrop of the universe, highlighting the stark contrast between the order of the original entity and the chaos of the new one.
+Art Idea: A picture of a gleaming cosmic entity with dramatic shadowing. The art is highly detailed and uses a stippling technique, in the style of Terese Nielsen.
+
+Art 3: 1721184918.2008896
+Audio: A picture of a vibrant planet with ethereal lighting. The art is detailed and surreal, utilizing a mix of cool and warm hues to depict the contrast between order and chaos. In the style of Terese Nielsen, the entities are shown as nebula-like figures, their hands touching, with a burst of radiant cosmic energy flowing between them and into the planet. The scene is set against the backdrop of the universe, highlighting the stark contrast between their creation and the void.
+Art Idea: A picture of a radiant planet with ethereal lighting. The art is surreal and detailed, utilizing a blend of cool and warm hues to depict the contrast between order and chaos. In the style of Terese Nielsen, nebula-like figures are shown with their hands touching, a stream of cosmic energy flowing between them and into the planet. The scene is set against the backdrop of the universe, highlighting the stark contrast between their creation and the void.
+
+Art 4: 1721184981.2443306
+Audio: A picture of radiant beings of order and chaos with ethereal lighting. The art is detailed and surreal, with a vibrant color palette, in the style of Terese Nielsen. The entities are shown bestowing consciousness onto their creations, a burst of radiant cosmic energy flowing from their hands into their creations. The scene is set against the backdrop of the diverse and vibrant planet they've created, filled with various creatures and lifeforms.
+Art Idea: A picture of radiant beings with ethereal lighting. The art is detailed and surreal, using vibrant colors and exhibiting a high level of detail, in the style of Terese Nielsen.
+
+Art 5: 1721185049.629725
+Audio: A picture of a magnificent city and a whimsical landscape with ethereal lighting. The art is meticulously detailed and vibrantly colored, in the style of Terese Nielsen. The beings of order and chaos are depicted as radiant figures, their hands touching their creations as they shape their world. The scene is set against the backdrop of their diverse world, highlighting the stark contrast between their creations.
+Art Idea: A picture of grand city with a whimsical landscape bathed in ethereal lighting. The art is meticulously detailed and vibrant, showcasing a unique blend of geometric patterns and surreal elements, in the style of Terese Nielsen.
+
+Art 6: 1721185108.572654
+Audio: Image of outer space, full of stars and galaxies
+Art Idea: A picture of an awe-inspiring outer space with dim, ambient lighting. The art is hyper-realistic and uses a combination of oil paint and glazing techniques, in the style of Johannes Vermeer.
+
+Art 7: 1721185167.2220807
+Audio: A picture of grand libraries and vibrant art scenes with contrasting lighting. The art is detailed and abstract, filled with geometric patterns and colorful swirls, in the style of Terese Nielsen. The order and chaos beings are shown interacting with their creations, their faces reflecting their passion and devotion. The scene is set against the backdrop of their world, filled with diverse life forms and landscapes.
+Art Idea: A picture of a grand library with dim, contrasting lighting. The art is detailed and abstract, filled with geometric patterns and colorful swirls, in the style of Terese Nielsen. The order and chaos beings are shown with radiant faces, reflecting their passion and devotion as they interact with their vibrant, contrasting creations.
+
+Art 8: 1721185249.3549426
+Audio: A picture of passionate beings of order and chaos with ethereal lighting. The art is detailed and surreal, with a mixture of geometric patterns and colorful swirls, in the style of Terese Nielsen. The beings are depicted in a passionate dance, their bodies intertwined, with elements of order and chaos swirling around them. The scene is set against the backdrop of their diverse world, highlighting the stark contrast between their creations.
+Art Idea: A picture of passionate beings of order and chaos with ethereal lighting. The art is detailed and surreal, with a mixture of geometric patterns and colorful swirls, in the style of Terese Nielsen. The beings are depicted in a passionate dance, their bodies intertwined, with elements of order and chaos swirling around them. The scene is set against the backdrop of their diverse world, highlighting the stark contrast between their creations.
+
+Art 9: 1721185306.2430744
+Audio: A picture of the cosmic entities bestowing the power to shape a new world onto the beings of order and chaos with radiant lighting. The art is detailed and surreal, filled with geometric patterns and colorful swirls, in the style of Terese Nielsen. The entities and their creations are shown against the backdrop of the universe, highlighting the stark contrast between the void and the vibrant world they're creating.
+Art Idea: A picture of radiant cosmic entities with stark, contrasting lighting. The art is detailed and surreal, filled with geometric patterns and colorful swirls, in the style of Terese Nielsen.
+
+Art 10: 1721185367.54752
+Audio: A picture of ethereal neutral creatures with serene lighting. The art is detailed and surreal, filled with symbols of both order and chaos, in the style of Terese Nielsen. The beings of order and chaos are shown in the foreground, their faces filled with awe and curiosity as they observe the neutral creatures. The scene is set against the backdrop of a lush, vibrant forest, highlighting the stark contrast between the creatures and their surroundings.
+Art Idea: A picture of serene neutral creatures with ethereal lighting. The art is detailed and surreal, with a focus on symbolism and intricate details, in the style of Terese Nielsen.
+
+Art 11: 1721185423.3974328
+Audio: A picture of the serene neutral beings with tranquil lighting. The art is detailed and surreal, filled with symbols of balance and unity, in the style of Terese Nielsen. The beings of order and chaos are shown in the foreground, their forms subtly changing, reflecting their transformation and growing understanding. The scene is set against the backdrop of a peaceful forest, echoing the tranquility of the neutral beings' lifestyle.
+Art Idea: A picture of ethereal serene neutral beings with tranquil, dappled lighting. The art is detailed and dreamlike, featuring a transformative creative technique, in the style of Terese Nielsen.
+
+Art 12: 1721185480.0359836
+Audio: A picture of a chaotic celestial event with ominous lighting. The art is detailed and dynamic, filled with swirling galaxies and shooting stars, in the style of Terese Nielsen. The beings of order, chaos, and neutrality are shown in the foreground, their forms radiating with determination and unity as they attempt to restore balance to their world. The scene is set against the backdrop of their vibrant world, now being disrupted by the celestial event.
+Art Idea: A picture of a radiant nebula with low, ominous lighting. The art is highly detailed and dynamic, filled with swirling galaxies and shooting stars, in the style of Terese Nielsen.
+
+Art 13: 1721185576.8052237
+Audio: A picture of a colossal world-entity with awe-inspiring lighting. The art is detailed and dynamic, filled with intricate landscapes and celestial bodies, in the style of Terese Nielsen. The world-entity is portrayed as a beautiful fusion of order, chaos, and neutrality, its form radiating with power and love for its inhabitants. The beings of order, chaos, and neutrality are shown in the foreground, their faces filled with awe and determination as they reach out to the world-entity. The scene is set against a backdrop of chaos caused by the celestial event, highlighting the stark contrast between the turmoil and the unity of the beings.
+Art Idea: A picture of a colossal world-entity with radiant, awe-inspiring lighting. The art is detailed and dynamic, filled with swirling galaxies and floating islands, in the style of Terese Nielsen. The cosmic landscape is created using a combination of digital painting and photobashing techniques, emphasizing the vastness of the universe and the power of the world-entity.
+
+Art 14: 1721185636.5703232
+Audio: A picture of a colossal world-entity with awe-inspiring lighting. The art is detailed and dynamic, filled with intricate landscapes and celestial bodies, in the style of Terese Nielsen. The cosmic entities are shown merging with the world-entity, their forms radiating with cosmic energy. The beings of order, chaos, and neutrality are shown in the foreground, their faces filled with awe and determination as they watch the celestial spectacle unfold. The scene is set against a backdrop of chaos caused by the celestial event, highlighting the stark contrast between the turmoil and the unity of the beings.
+Art Idea: A picture of colossal world-entity with radiant lighting. The art is minutely detailed and dynamically composed, in the style of Terese Nielsen.
+
+Art 15: 1721185701.8481092
+Audio: A picture of an ancient awakened entity with ethereal lighting. The art is intricate and surreal, filled with cosmic patterns and ancient symbols, in the style of Terese Nielsen. The awakened entity is shown emerging from the world-entity, its form radiating with wisdom and power. The cosmic entities and the beings of order, chaos, and neutrality are depicted in the foreground, their faces filled with awe and anticipation. The scene is set against the backdrop of a chaotic celestial event, with beautiful auroras illuminating the scene.
+Art Idea: A picture of an ancient, ethereal awakened entity with surreal, cosmic lighting. The art is detailed and intricate, filled with cosmic patterns and ancient symbols, in the style of Terese Nielsen.
+
+Art 16: 1721185765.3735209
+Audio: A picture of an ancient awakened entity with ethereal lighting. The art is intricate and surreal, filled with cosmic patterns and ancient symbols, in the style of Terese Nielsen. The awakened entity is shown revealing the prophecy, with symbols representing order, chaos, and neutrality swirling around it. The cosmic entities and the beings of order, chaos, and neutrality are depicted in the foreground, their faces filled with awe and understanding as they listen to the prophecy. The scene is set against the backdrop of the celestial event, now transformed into a beacon of hope.
+Art Idea: A picture of an ethereal ancient awakened entity with celestial lighting. The art is intricate and surreal, filled with cosmic patterns and ancient symbols, in the style of Terese Nielsen.
+
+Art 17: 1721185836.6320703
+Audio: A picture of a radiant new entity with soothing lighting. The art is detailed and dynamic, filled with intricate celestial patterns, in the style of Terese Nielsen. The new entity is shown forming at the heart of the celestial event, its light contrasting starkly with the surrounding chaos. The beings of order, chaos, and neutrality are depicted in the foreground, their forms glowing as they form a protective barrier around the new entity. The scene is set against the backdrop of the calming world-entity, its forests blooming and oceans calming under the influence of the new entity's light.
+Art Idea: A picture of a radiant new entity with soothing lighting. The art is detailed and dynamic, filled with intricate celestial patterns, in the style of Terese Nielsen. It includes mythical beings of order, chaos, and neutrality that glow as they form a protective barrier around the new entity. The backdrop is a calming world-entity, its forests blooming and oceans calming under the soft light of the new entity.
+
+Art 18: 1721185905.094277
+Audio: A picture of grand libraries and vibrant art scenes with contrasting lighting. The art is detailed and abstract, filled with geometric patterns and colorful swirls, in the style of Terese Nielsen. The order and chaos beings are shown interacting with their creations, their faces reflecting their passion and devotion. The scene is set against the backdrop of their world, filled with diverse life forms and landscapes.
+Art Idea: A picture of a grand library with contrasting lighting. The art is detailed and abstract, filled with geometric patterns and vibrant swirls, in the style of Terese Nielsen. The beings of order and chaos are shown in the midst of their creation process, their faces reflecting their passion and devotion.
+
+Art 19: 1721185962.690687
+Audio: A picture of an inquisitive new entity with vibrant lighting. The art is detailed and dynamic, filled with intricate landscapes and diverse life forms, in the style of Terese Nielsen. The new entity is shown at the center, its form radiating with curiosity and wonder, as it interacts with the world around. The scene is set against the backdrop of the diverse world, its geometric cities and whimsical forests reflecting the balance between order, chaos, and neutrality.
+Art Idea: A picture of an inquisitive new entity with vibrant lighting. The art is detailed and surreal, employing the use of dynamic brush strokes and vibrant color palettes, in the style of Terese Nielsen.
+
+Art 0: 1721256915.1145506
+Audio: 
+Art Idea: A picture of a stark, silent landscape with soft lighting. The art is minimalist and uses negative space, in the style of Yoko Ono.
+
+Art 0: 1721257156.7833042
+Audio: Fantastic illustration, children's book. Theme: 
+Art Idea: A picture of vibrant forest with twinkling stars. The art is surrealistic and uses mixed media, in the style of Eric Carle. The painting should be filled with a sense of childlike wonder and excitement, capturing the feeling of diving into a fantastic children's book. It is lit with a mix of natural and magical light, giving it a sense of being in a dream or a fairy tale.
+
+Art 1: 1721257195.847333
+Audio: Fantastic illustration, children's book. Theme: So, I record audio and I use that audio and I put text on the screen. That text is there so that they know what's going on in the image. That is used to create some sort of fantastic I update the screen based on the text that is shown to the user. What?
+Art Idea: A picture of a vibrant microphone with soft twilight lighting. The art is fantastical and uses watercolor technique, in the style of Quentin Blake.
+
+Art 2: 1721257234.93281
+Audio: Fantastic illustration, children's book. Theme: Okay. That's it. Thank you. Bye. Bye. Bye. What I actually mean is I update the screen based on what we hear. Yeah.
+Art Idea: A picture of a whimsical digital screen with soft, warm lighting. The art is semi-realistic and uses digital painting techniques, in the style of Oliver Jeffers.
+
+Art 0: 1721257382.4133384
+Audio: Fantastic illustration, children's book. Theme: Okay. That's it. Thank you. Bye. Bye. Bye. What I actually mean is I update the screen based on what we hear. Yeah.
+Art Idea: A picture of a fantastic children's book with soft, warm lighting. The art is realistic and uses mixed media, in the style of Eric Carle.
+
+Art 1: 1721257427.671581
+Audio: Fantastic illustration, children's book. Theme: Let's talk about beautiful things like cool birds or dangerous animals. Maybe sharks or the... or wizards. Wizards? What else is dangerous? I don't really know. Maybe... Monsters or aliens or... The ground? The ground is dangerous if you fall on it.
+Art Idea: A picture of a dangerous cliff with ominous lighting. The art is surrealistic and uses a perspective technique, in the style of M.C. Escher.
+
+Art 2: 1721257468.132022
+Audio: Fantastic illustration, children's book. Theme:  Thank you for watching. All right, that was something cool that got drawn. It's kind of an abstract which I... I don't understand. Let's suggest more concrete topics. A blue jay fighting with... A blue jay that's become a wizard. A chameleon that has become... a buddhist master. A cockatiel that has learned... A cockatiel that is a pop star. A neuron...
+Art Idea: A picture of a vibrant, enchanted forest with soft, dappled lighting. The art is a surrealistic and uses mixed media (acrylics and collage), in the style of Salvador Dalí.
+
+Art 3: 1721257509.4349844
+Audio: Fantastic illustration, children's book. Theme: of metal. A... cave. Inside the cliff face, a great ocean. Thank you for watching! See you in the next video!  Thanks for watching! See you in the next video!
+Art Idea: A picture of a gleaming metallic ocean with soft, warm lighting. The art is surrealistic and rich with textures, in the style of Yayoi Kusama. The metals within the cave and the ocean depict a sense of wonder and adventure, while the warm lighting adds an element of comfort and familiarity, mirroring the gratitude expressed in the conversation.
+
+Art 4: 1721257546.4689438
+Audio: Fantastic illustration, children's book. Theme: Thanks for watching! Thanks for watching! Thanks for watching! Thanks for watching! This kind of animal is a chameleon. What does it mean? Who are you?
+Art Idea: A picture of a luminescent chameleon with warm, diffused lighting. The art is hyper-realistic and uses color blocking technique, in the style of Lisa Frank.
+
+Art 5: 1721257586.7117589
+Audio: Fantastic illustration, children's book. Theme: Thanks for watching! What does it mean? Who are you? What kind of creature are you? Thanks for watching! Where did you learn to be a computer? Where did you learn to fly? In what world...
+Art Idea: A picture of whimsical, fantastical creatures with magic-hour lighting. The art is surreal and mixed-media, in the style of Shaun Tan.
+
+Art 6: 1721257625.8035371
+Audio: Fantastic illustration, children's book. Theme: an alien or a computer? In what world would you become a... in what world would you become a... in what world would you become a... This background is strange and haunting, like a didgeridoo. This background is strange and haunting, like a didgeridoo. Sometimes the computer crashes, and it's unclear why.
+Art Idea: A picture of a crashed computer with dim, otherworldly lighting. The art is surrealistic and uses juxtaposition, in the style of Salvador Dali.
+

@@ -40,14 +40,14 @@ def main():
             # Get next art prompt
             next_prompt = get_next_art_prompt(story_so_far,
                                               done_amount=f"Part {i + 1}/{num_images}",
-                                              artist="Rebecca Guay")
+                                              artist="Terese Nielsen")
             story_so_far.append(next_prompt)
             art_description = next_prompt[1]
 
             previous_context = "This is a creation myth about the origin story of fantastic alien robots, starting with the birth of the universe.\n\n" + "\n".join(
                 [story[0] for story in story_so_far])
 
-            save_loc = update_image(i, image, oldness, art_description, previous_context, polygon_size=0.6)
+            save_loc = update_image(i, image, oldness, art_description, previous_context, polygon_size=0.5)
 
             print(f"Saved image {i + 1} to {save_loc}")
             num_generated = i + 1

@@ -85,7 +85,8 @@ def update_image_in_background(starting_image_file: str) -> None:
                 audio = instructions
 
         console.log(f"Generating with art idea: {audio}")
-        saved_file_loc = update_image(image_num, image, oldness, audio)
+        saved_file_loc = update_image(image_num, image, oldness,
+                                      "Fantastic illustration, children's book. Theme: " + audio, polygon_size=0.55)
 
         # TODO Record that the image has been updated
 
